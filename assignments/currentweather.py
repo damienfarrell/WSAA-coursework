@@ -1,7 +1,14 @@
 import requests
 
-url = "https://api.open-meteo.com/v1/forecast?latitude=53.82&longitude=-9.5&current=temperature_2m,wind_speed_10m&current=wind_direction_10m"
-response = requests.get(url)
+url = "https://api.open-meteo.com/v1/forecast"
+
+params = {
+    "latitude": 53.82,
+    "longitude": -9.5,
+    "current": "temperature_2m,wind_speed_10m,wind_direction_10m"
+}
+
+response = requests.get(url, params)
 data = response.json()
 
 temp = data["current"]["temperature_2m"]
