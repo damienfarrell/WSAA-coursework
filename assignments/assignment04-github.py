@@ -1,3 +1,7 @@
+# assignment04-github.py
+# A program which reads a text file on Github and replaces a name in it.
+# Author: Damien Farrell
+
 from github import Github
 from config import apikey as cfg
 

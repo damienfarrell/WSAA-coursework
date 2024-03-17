@@ -1,3 +1,8 @@
+# assignment01-currentweather.py
+# A program which displays the specific weather data at certain coordinates.
+# Author: Damien Farrell
+
+
 import requests
 
 url = "https://api.open-meteo.com/v1/forecast"

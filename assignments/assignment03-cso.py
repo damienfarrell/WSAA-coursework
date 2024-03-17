@@ -1,3 +1,8 @@
+# assignment03-cso.py
+# A program which create a json file with data from the CSO.
+# Author: Damien Farrell
+
+
 import requests
 import json
 
