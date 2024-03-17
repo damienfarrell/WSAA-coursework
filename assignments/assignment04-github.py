@@ -1,25 +1,13 @@
-import requests
+from github import Github
 from config import apikey as cfg
+import json
 
+g = Github(cfg["apikey"])
+repo = g.get_repo("damienfarrell/wsaa-coursework")
 
-url = "https://github.com/damienfarrell/wsaa-coursework"
+contents = repo.get_contents("assignments/")
 
-url_file_path = "https://github.com/damienfarrell/wsaa-coursework/blob/main/assignments/death_on_the_nile.txt"
+file_info = []
 
-
-
-
-apikey = cfg["apikey"]
-
-
-
-
-with open(url_file_path, 'r') as file:
-        file_data = file.read()
-
-
-
-response = requests.get(url, auth=("token", apikey))
-
-print(response.json)
-print(file_data)
+with open("repo_contents.json", "w") as json_file:
+    json.dump(file_info, json_file, indent=4)
